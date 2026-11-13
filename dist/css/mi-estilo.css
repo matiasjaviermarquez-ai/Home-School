@@ -1,0 +1,275 @@
+/* ================================================================= */
+/* ESTILOS DE ALTO NIVEL - HOME SCHOOL ACADEMIC                      */
+/* ================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1e293b;
+  background-color: #f8fafc;
+  scroll-behavior: smooth;
+}
+
+/* --- BARRA DE NAVEGACIÓN (GLASSMORPHISM) --- */
+.navbar {
+  background-color: rgba(33, 37, 41, 0.92) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+/* Corrección de nitidez y anti-pixelación para el Logo */
+.navbar-brand img {
+  width: 160px;
+  height: 75px;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+.navbar-nav .nav-link {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  color: #e2e8f0 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ffc107 !important;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* --- CARRUSEL DINÁMICO --- */
+.carousel-img {
+  height: 85vh;
+  object-fit: cover;
+  filter: brightness(0.65);
+}
+
+/* Optimización especial para imagen horizontal 3.1 sin pérdida de calidad ni recortes de rostros */
+.carousel-img-custom {
+  object-position: center 42%;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.bg-dark-overlay {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  border-left: 5px solid #0d6efd;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* --- ENCABEZADOS Y SEPARADORES --- */
+.encabezado-movible {
+  position: relative;
+  font-weight: 800;
+  color: #0f172a;
+  padding-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.encabezado-movible::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #0d6efd, #0dcaf0);
+  bottom: 0;
+  left: calc(50% - 35px);
+  border-radius: 4px;
+}
+
+/* --- SECCIÓN DE SERVICIOS E ÍCONOS FLOTANTES --- */
+.contenedor-icono-servicio {
+  width: 85px;
+  height: 85px;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  box-shadow: 0 8px 16px rgba(13, 110, 253, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover .contenedor-icono-servicio {
+  transform: translateY(-6px) rotate(4deg);
+  background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+  color: #ffffff !important;
+  box-shadow: 0 12px 24px rgba(13, 110, 253, 0.3);
+}
+
+/* --- ESTÉTICA PREMIUM MÁS COMPACTA PARA TIENDAS --- */
+.bg-gradient-light {
+  background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
+}
+
+.card-producto {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card-producto:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.1) !important;
+  border-color: rgba(13, 110, 253, 0.4) !important;
+}
+
+.badge-stock {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(209, 231, 221, 0.95);
+  backdrop-filter: blur(4px);
+  color: #0f5132;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 50px;
+  letter-spacing: 0.4px;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.badge-libro {
+  background: rgba(13, 110, 253, 0.1);
+  color: #0d6efd;
+}
+
+/* CONTENEDOR DE IMAGEN MÁS PEQUEÑO Y COMPACTO */
+.contenedor-imagen-tienda {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.contenedor-imagen-tienda img {
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.05));
+}
+
+.card-producto:hover .contenedor-imagen-tienda img {
+  transform: scale(1.08);
+}
+
+.categoria-producto {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.titulo-producto {
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.descripcion-corta {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.4;
+  min-height: 36px;
+}
+
+.precio-producto {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #dc3545;
+  letter-spacing: -0.5px;
+}
+
+.transition-btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.transition-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25) !important;
+}
+
+/* --- BOTÓN DESPLEGABLE DE CATALOGO DE LIBROS --- */
+.btn-ver-catalogo {
+  background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+  color: #ffffff;
+  padding: 12px 30px;
+  font-size: 1rem;
+  box-shadow: 0 8px 18px rgba(13, 110, 253, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-ver-catalogo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(13, 110, 253, 0.3);
+  color: #ffffff;
+}
+
+/* --- BOTÓN FLOTANTE DE WHATSAPP --- */
+@keyframes latido {
+  0% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); }
+  50% { transform: scale(1.1); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5); }
+  100% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); }
+}
+
+.btn-whatsapp {
+  position: fixed;
+  width: 62px;
+  height: 62px;
+  bottom: 28px;
+  right: 28px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 32px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  animation: latido 2.2s infinite ease-in-out;
+  transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1eb857;
+  color: #FFF;
+  animation: none;
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* --- FOOTER --- */
+footer {
+  border-top: 4px solid #0d6efd;
+  background: #0f172a !important;
+}
